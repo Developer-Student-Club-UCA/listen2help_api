@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 
 dotenv.config();
 
-//Connect to db
+//Connect to db, uncomment this when you got the .env file
 /*mongoose.connect(
     process.env.DB_CONNECT, {
         useUnifiedTopology: true,
