@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const userProfileAnonimHeadSchema = require('./userProfileAnonimHead.schema');
+const cypherDataKeySchema = require('./cypherDataKey.schema');
+const cypherDataSchema = require('./cypherData.schema');
 
 const userProfileAnonimSchema = new mongoose.Schema({
     head: {
@@ -7,13 +9,13 @@ const userProfileAnonimSchema = new mongoose.Schema({
         required: true
     },
     dossierKey: {
-        type: String,
-        required: true
+        type: cypherDataKeySchema,
+        required: false
     },
     dossierData: {
-        type: String,
-        required: true
+        type: cypherDataSchema,
+        required: false
     }
 });
 
-module.exports = mongoose.model('user-profile-anonim', userProfileAnonimSchema);
+module.exports = userProfileAnonimSchema;

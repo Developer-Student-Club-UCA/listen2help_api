@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const therapistHeadSchema = require('./therapistHead.schema');
+const cypherDataSchema = require('./cypherData.schema');
+const cypherDataKeySchema = require('./cypherDataKey.schema.schema');
 
 const therapistSchema = new mongoose.Schema({
     head: {
@@ -7,11 +9,11 @@ const therapistSchema = new mongoose.Schema({
         required: true
     },
     emailKey: {
-        type: String,
+        type: cypherDataKeySchema,
         required: true
     },
     emailEncrypted: {
-        type: String,
+        type: cypherDataSchema,
         required: true
     }
 });

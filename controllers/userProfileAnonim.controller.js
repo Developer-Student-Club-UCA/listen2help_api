@@ -1,5 +1,7 @@
 'use strict';
-const UserProfileAnonimSchema = require('../schemas/userProfileAnonim.schema');
+const mongoose = require('mongoose');
+const UserProfileAnonim = require('../schemas/userProfileAnonim.schema');
+const UserProfileAnonimSchema = mongoose.model('user-profile-anonim', UserProfileAnonim);
 const constants = require('../shared/constantsMessages.shared');
 
 module.exports = {
