@@ -53,4 +53,4 @@ In the project you'll find the `constants.shared.js` file, where you can declare
 * `201 Created`: When is a successful PUT request.
 * `400 Bad Request`: When something is wrong in the request, as a bad data type, or a field not entered, etc.
 * `404 Not found`: When there are not  found resources in the request.
-* `500 Internal Server Error`: Used what you catch problems on the server.
+* `500 Internal Server Error`: Used when you catch problems on the server.
