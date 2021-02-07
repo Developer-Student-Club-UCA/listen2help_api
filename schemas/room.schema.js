@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const roomMessageSchema = require('./roomMessage.schema');
+const roomMessageBlockSchema = require('./roomMessageBlock.schema');
 const roomMemberSchema = require('./roomMember.schema');
 
 const roomSchema = new mongoose.Schema({
@@ -34,7 +34,7 @@ const roomSchema = new mongoose.Schema({
         }
     },
     roomMembers: [roomMemberSchema],
-    messages: [roomMessageSchema]
+    messages: [roomMessageBlockSchema]
 });
 
 module.exports = roomSchema;
