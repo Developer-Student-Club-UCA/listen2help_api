@@ -33,8 +33,20 @@ const roomSchema = new mongoose.Schema({
             required: true
         }
     },
-    roomMembers: [roomMemberSchema],
-    messages: [roomMessageBlockSchema]
+    roomMembers: [{
+        type: roomMemberSchema,
+        required: true
+    }],
+    messages: [{
+        messageBlockId: {
+            type: String,
+            required: false
+        },
+        date: {
+            type: Date,
+            required: false
+        }
+    }]
 });
 
 module.exports = roomSchema;

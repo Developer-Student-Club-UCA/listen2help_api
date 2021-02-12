@@ -1,5 +1,12 @@
 const express = require('express');
 const app = express();
+const http = require('http').createServer(app);
+const io = require('socket.io')(http, {
+    cors: {
+        origins: ['http://localhost:4200']
+    }
+});
+
 const mongoose = require('mongoose');
 const bodyParser  = require("body-parser");
 const dotenv = require('dotenv');
@@ -19,13 +26,26 @@ mongoose.connect(
         useUnifiedTopology: true,
         useNewUrlParser: true
     },
-    () => console.log(constants.SuccessConnectionToDB));
+    (err) => {
+        if (err) {
+            console.log(err);
+        }
+        console.log(constants.SuccessConnectionToDB);
+    });
 
 //Cors
 app.use(cors({ origin: true }));
 
-app.listen(
-    process.env.PORT || 8080,
-    () => console.log(`${constants.ServerSuccessStatus} on http://localhost:${process.env.PORT}`));
+io.on('connection', (socket) => {
+    console.log('a user connected');
+
+    socket.on('disconnect', () => {
+        console.log('user disconnected');
+    });
+});
 
 endpoints(app);
+
+http.listen(process.env.PORT, () => {
+    console.log(`${constants.ServerSuccessStatus} on *:${process.env.PORT}`);
+});

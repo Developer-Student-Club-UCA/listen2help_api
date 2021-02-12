@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const userProfileAnonim = require('./userProfileAnonim.schema.schema');
+const userProfileAnonim = require('./userProfileAnonim.schema');
 
 const roomMessageBlockSchema = new mongoose.Schema({
     date: {

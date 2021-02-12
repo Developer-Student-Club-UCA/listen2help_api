@@ -14,10 +14,10 @@ const roomMessageBlockSchema = new mongoose.Schema({
             required: true
         }
     },
-    messages: {
+    messages: [{
         type: roomMessage,
         required: true
-    }
+    }]
 });
 
 module.exports = roomMessageBlockSchema;
