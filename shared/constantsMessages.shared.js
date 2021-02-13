@@ -24,5 +24,18 @@ module.exports = {
 
     // DELETE petitions messages
     DeletePetitionsErrorMessage: 'No se pudo eliminar',
-    DeletePetitionsSuccessMessage: 'Eliminado con éxito'
+    DeletePetitionsSuccessMessage: 'Eliminado con éxito',
+
+    // Sockets messages
+    SocketErrorMessage: 'Algo salió mal',
+    AccessDeniedMessage: 'Acceso denegado',
+    AccessGrantedMessage: 'Acceso autorizado',
+    NoTokenReceivedMessage: 'No se recibió el token',
+    InvalidTokenMessage: 'Token no válido',
+    NoUserFoundMessage: 'No se encontró el usuario',
+    TokenGeneratedMessage: 'Token generado con éxito',
+    SaveUserErrorMessage: 'Error al guardar usuario',
+    TokenExpirationTimeMessage: '3 días',
+    UpdateUserErrorMessage: 'No se pudo actualizar el usuario',
+    TokenExpiredErrorMessage: 'Token expirado'
 };

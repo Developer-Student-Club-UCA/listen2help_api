@@ -4,7 +4,7 @@ const rsaKeyCertificateSchema = require('./rsaKeyCertificate.schema');
 const deviceSchema = new mongoose.Schema({
     keyAndCertificate: {
         type: rsaKeyCertificateSchema,
-        required: true
+        required: false
     },
     devFamily: {
         type: String,
@@ -12,7 +12,7 @@ const deviceSchema = new mongoose.Schema({
     },
     notificationToken: {
         type: String,
-        required: true
+        required: false
     },
     invitation: {
         pend: {
@@ -21,7 +21,7 @@ const deviceSchema = new mongoose.Schema({
                 required: true
             },
             expirationDate: {
-                type: Date,
+                type: String,
                 required: true
             },
             failCount: {
@@ -36,7 +36,7 @@ const deviceSchema = new mongoose.Schema({
                 required: false
             },
             date: {
-                type: Date,
+                type: String,
                 required: false
             }
         }

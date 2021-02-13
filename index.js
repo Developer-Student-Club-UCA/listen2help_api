@@ -12,6 +12,9 @@ const bodyParser  = require("body-parser");
 const dotenv = require('dotenv');
 const crypto = require('crypto');
 const constants = require('./shared/constantsMessages.shared');
+
+const auth = require('./controllers/authentication.controller');
+
 let cors = require('cors');
 let endpoints = require("./endpoints");
 
@@ -42,6 +45,12 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         console.log('user disconnected');
     });
+
+    socket.on('join-device', (deviceId) => {
+        socket.join(deviceId.deviceId);
+    });
+
+    auth(app, socket);
 });
 
 endpoints(app);
